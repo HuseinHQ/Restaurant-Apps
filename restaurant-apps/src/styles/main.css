@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+ 
+.skip-link:focus {
+   top: 0;
+}
+
+header{
+  display: grid;
+  padding: 16px;
+  font-size:medium;
+  justify-content: center;
+  grid-template-columns: 1fr 4fr;
+}
+
+.header__menu{
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+}
+
+.header__title{
+  display: flex;
+  justify-content: left;
+}
+
+svg{
+  width: 24px;
+  margin-right: 16px;
+}
+
+.navigation{
+  display: none;
+  align-items: center;
+  justify-content: right;
+  font-size: larger;
+}
+
+.navigation > ul > li > a{
+  padding: 10px;
+}
+
+.nav{
+  z-index: 10;
+  background-color: #fff;
+  width: 300px;
+  position: absolute;
+
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-300px, 0);
+  transform: translate(-300px, 0);
+
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+}
+
+.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.nav__item {
+  display: list-item;
+  border-bottom: 1px solid #E0E0E0;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+}
+.nav__item > a{
+  display: inline-block;
+  padding: 20px 100px 20px 20px;     
+  text-decoration: none;
+  color: black;
+}
+
+.header__image{
+  display: inline;
+  border: 10px;
+  background-image: url("../public/images/heros/fork-and-spoon.png");
+  background-position: center;
+  background-color: green;
+}
+
+.hero{
+  display: flex;
+  align-items: center;
+  min-height: 230px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  background-image: url("../public/images/heros/hero-image_4.jpg");
+  background-position: center;
+  background-color: green;
+}
+
+.hero__inner{
+  color: white;
+}
+
+.main-title{
+  padding: 20px;
+  text-align: center;
+}
+
+restaurant-list{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 20px;
+  justify-items: center;
+}
+
+footer{
+  text-align: center;
+}
+
+footer > h2 {
+  margin: 16px;
+  font-weight: normal;
+}
+
+footer > p {
+  margin: 16px;
+}
+
+@media screen and (min-width: 710px) {
+  restaurant-list{
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 60px;
+  }
+  .nav{
+    display: flex;
+  }
+  header{
+    grid-template-columns: 1fr 2fr;
+  }
+  .hero{
+    min-height: 265px;
+  }
+  .navigation{
+    display: grid;
+  }
+  .nav__item{
+    display: inline;
+    list-style-type: none;
+    border: none;
+    margin: auto 20px;
+    text-align: right;
+  }
+  .nav__item > a{
+    padding: 0px;   
+    text-decoration: none;
+    color: black;
+  }
+  .header__menu{
+    display: none;
+  }
+  #drawer{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  restaurant-list{
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px 100px;
+  }
+  .hero{
+    min-height: 300px;
+  }
+}
